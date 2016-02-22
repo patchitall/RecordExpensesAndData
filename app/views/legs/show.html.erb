@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @leg.trip_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @leg.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @leg.end_time %>
+</p>
+
+<p>
+  <strong>Start mileage:</strong>
+  <%= @leg.start_mileage %>
+</p>
+
+<p>
+  <strong>End mileage:</strong>
+  <%= @leg.end_mileage %>
+</p>
+
+<p>
+  <strong>Non travel time in minutes:</strong>
+  <%= @leg.non_travel_time_in_minutes %>
+</p>
+
+<p>
+  <strong>Non work miles:</strong>
+  <%= @leg.non_work_miles %>
+</p>
+
+<%= link_to 'Edit', edit_leg_path(@leg) %> |
+<%= link_to 'Back', legs_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @expense.trip_id %>
+</p>
+
+<p>
+  <strong>Expense name:</strong>
+  <%= @expense.expense_name %>
+</p>
+
+<p>
+  <strong>Expense amount:</strong>
+  <%= @expense.expense_amount %>
+</p>
+
+<p>
+  <strong>Expense receipt:</strong>
+  <%= @expense.expense_receipt %>
+</p>
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

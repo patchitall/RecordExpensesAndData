@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trip_id: 1
+  start_time: 2016-02-22 10:07:16
+  end_time: 2016-02-22 10:07:16
+  start_mileage: 1.5
+  end_mileage: 1.5
+  non_travel_time_in_minutes: 1
+  non_work_miles: 1.5
+
+two:
+  trip_id: 1
+  start_time: 2016-02-22 10:07:16
+  end_time: 2016-02-22 10:07:16
+  start_mileage: 1.5
+  end_mileage: 1.5
+  non_travel_time_in_minutes: 1
+  non_work_miles: 1.5

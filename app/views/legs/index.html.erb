@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Legs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trip</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Start mileage</th>
+      <th>End mileage</th>
+      <th>Non travel time in minutes</th>
+      <th>Non work miles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legs.each do |leg| %>
+      <tr>
+        <td><%= leg.trip_id %></td>
+        <td><%= leg.start_time %></td>
+        <td><%= leg.end_time %></td>
+        <td><%= leg.start_mileage %></td>
+        <td><%= leg.end_mileage %></td>
+        <td><%= leg.non_travel_time_in_minutes %></td>
+        <td><%= leg.non_work_miles %></td>
+        <td><%= link_to 'Show', leg %></td>
+        <td><%= link_to 'Edit', edit_leg_path(leg) %></td>
+        <td><%= link_to 'Destroy', leg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leg', new_leg_path %>
