@@ -35,5 +35,15 @@
   <%= @leg.non_work_miles %>
 </p>
 
+<p>
+  <strong>Total Miles:</strong>
+  <%= @leg.mileage_total %>
+</p>
+
+<p>
+  <strong>Total Travel Time:</strong>
+  <%= @leg.travel_time_hours %> hour 
+  <%= @leg.travel_time_minutes %> minutes
+</p>
 <%= link_to 'Edit', edit_leg_path(@leg) %> |
 <%= link_to 'Back', legs_path %>

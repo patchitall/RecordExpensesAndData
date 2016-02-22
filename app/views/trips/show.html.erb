@@ -10,5 +10,21 @@
   <%= @trip.end_date %>
 </p>
 
+<% x=0 %>
+<% @trip.legs.each do |leg| %>		
+	Leg #<%= x += 1 %>
+	<%= leg.mileage_total %> Miles<br>
+<% end %>
+<br>
+<strong>Total mileage:</strong>
+<%= @trip.trip_miles%>
+
+<br><br>
+
+
+
+
+
+<%= link_to 'Add a Leg', new_leg_path %>
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>
