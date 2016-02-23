@@ -1,33 +1,24 @@
-<%= form_for(@expense) do |f| %>
-  <% if @expense.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+<div class="container">
+<%= simple_form_for @expense do |f| %>
+<%= f.error_notification %>
+  
 
-      <ul>
-      <% @expense.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :trip_id %><br>
-    <%= f.number_field :trip_id %>
+  <div class="row">
+    <%= f.input :trip_id %>
   </div>
-  <div class="field">
-    <%= f.label :expense_name %><br>
-    <%= f.text_field :expense_name %>
+  <div class="row">
+    <%= f.input :expense_name %><br>
+    
   </div>
-  <div class="field">
-    <%= f.label :expense_amount %><br>
-    <%= f.text_field :expense_amount %>
+  <div class="row">
+    <%= f.input :expense_amount %><br>
+ 
   </div>
-  <div class="field">
-    <%= f.label :expense_receipt %><br>
-    <%= f.text_field :expense_receipt %>
+  <div class="row">
+    <%= f.input :expense_receipt, as: :file %><br>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <%= f.button :submit %>
   </div>
 <% end %>
+</div>

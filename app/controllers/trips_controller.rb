@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authenticate_user!
+ 
   # GET /trips
   # GET /trips.json
   def index
@@ -10,6 +12,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
+    @legs = @trip.legs.all
   end
 
   # GET /trips/new

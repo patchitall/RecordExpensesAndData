@@ -19,7 +19,7 @@
         <td><%= expense.trip_id %></td>
         <td><%= expense.expense_name %></td>
         <td><%= expense.expense_amount %></td>
-        <td><%= expense.expense_receipt %></td>
+        <td><%= image_tag expense.expense_receipt(:thumb) %></td>
         <td><%= link_to 'Show', expense %></td>
         <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
         <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>

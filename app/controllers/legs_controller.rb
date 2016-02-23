@@ -15,6 +15,8 @@ class LegsController < ApplicationController
   # GET /legs/new
   def new
     @leg = Leg.new
+    @leg.non_work_miles = 0
+    @leg.non_travel_time_in_minutes = 0
   end
 
   # GET /legs/1/edit
