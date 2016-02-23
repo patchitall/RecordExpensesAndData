@@ -4,14 +4,6 @@ class Trip < ActiveRecord::Base
 	has_many :legs
 
 
-	def expense_total
-		expense_total = 0
-		@expenses.each do |expense|
-			expense_total += expense.amount 
-		end
-	end
-
-
 	def trip_miles
 
 		@trip_mileage = 0
@@ -20,5 +12,15 @@ class Trip < ActiveRecord::Base
 		end
 		@trip_mileage
 	end
+
+	def trip_expense_total
+		@expense_total = 0
+		self.expenses.each do |expense|
+			@expense_total += expense.expense_amount
+		end
+		@expense_total
+	end
+
+	
 
 end

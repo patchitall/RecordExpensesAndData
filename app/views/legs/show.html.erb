@@ -42,8 +42,9 @@
 
 <p>
   <strong>Total Travel Time:</strong>
-  <%= @leg.travel_time_hours %> hour 
-  <%= @leg.travel_time_minutes %> minutes
+  
+  <%= pluralize(@leg.travel_time_hours, "hour" %> 
+  <%= pluralize(@leg.travel_time_minutes, "minute" %>
 </p>
 <%= link_to 'Edit', edit_leg_path(@leg) %> |
 <%= link_to 'Back', legs_path %>

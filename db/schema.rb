@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222151713) do
+ActiveRecord::Schema.define(version: 20160222203700) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer  "trip_id"
     t.string   "expense_name"
     t.float    "expense_amount"
-    t.string   "expense_receipt"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "expense_receipt_file_name"
+    t.string   "expense_receipt_content_type"
+    t.integer  "expense_receipt_file_size"
+    t.datetime "expense_receipt_updated_at"
   end
 
   create_table "legs", force: :cascade do |t|

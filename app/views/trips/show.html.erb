@@ -20,11 +20,22 @@
 <%= @trip.trip_miles%>
 
 <br><br>
+<% @trip.expenses.each do |expense|%>
+	<%= expense.expense_name %>: <%= number_to_currency(expense.expense_amount)%>
+		Receipt? 
+		<% if expense.receipt_check? %>
+			<%= image_tag('check.png', :size => "20x20") %> 
+		<% else%> 
+			<%= image_tag('x.png', :size => "20x20") %>
+		<% end%>
+<% end%>
+<br><br>
+<strong>Total expenses:
+	<%= number_to_currency(@trip.trip_expense_total) %>
 
+<br><br>
 
-
-
-
+<%= link_to 'Add an Expense', new_expense_path %>
 <%= link_to 'Add a Leg', new_leg_path %>
 <%= link_to 'Edit', edit_trip_path(@trip) %> |
 <%= link_to 'Back', trips_path %>
