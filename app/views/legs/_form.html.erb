@@ -1,45 +1,29 @@
-<%= form_for(@leg) do |f| %>
-  <% if @leg.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@leg.errors.count, "error") %> prohibited this leg from being saved:</h2>
-
-      <ul>
-      <% @leg.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :trip_id %><br>
-    <%= f.number_field :trip_id %>
+<div class="container">
+  <%= simple_form_for @leg do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <%= f.input :trip_id %><br> 
   </div>
-  <div class="field">
-    <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time %>
+  <div class="row">
+   <%= f.input :start_time, as: :datetime, html5: true %><br>
   </div>
-  <div class="field">
-    <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time %>
+  <div class="row">
+    <%= f.input :end_time, as: :datetime, html5: true %><br>
   </div>
-  <div class="field">
-    <%= f.label :start_mileage %><br>
-    <%= f.text_field :start_mileage %>
+  <div class="row">
+    <%= f.input :start_mileage %><br>
   </div>
-  <div class="field">
-    <%= f.label :end_mileage %><br>
-    <%= f.text_field :end_mileage %>
+  <div class="row">
+    <%= f.input :end_mileage %><br>
   </div>
-  <div class="field">
-    <%= f.label :non_travel_time_in_minutes %><br>
-    <%= f.number_field :non_travel_time_in_minutes %>
+  <div class="row">
+    <%= f.input :non_travel_time_in_minutes %><br>
   </div>
-  <div class="field">
-    <%= f.label :non_work_miles %><br>
-    <%= f.text_field :non_work_miles %>
+  <div class="row">
+    <%= f.input :non_work_miles %><br>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+   <div class="row">
+    <%= f.button :submit %>
   </div>
 <% end %>
+</div>

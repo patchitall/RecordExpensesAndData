@@ -1,25 +1,18 @@
-<%= form_for(@trip) do |f| %>
-  <% if @trip.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+<div class="container">
+<%= simple_form_for @trip do |f| %>
+<%= f.error_notification %>
+  
 
-      <ul>
-      <% @trip.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
+  <div class="row">
+    <%= f.input :start_date, as: :date, html5: true %>
   </div>
-  <div class="field">
-    <%= f.label :end_date %><br>
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <%= f.input :end_date, as: :date, html5: true %><br>
+ </div>
+  <div class="row">
+    <%= f.button :submit %>
   </div>
 <% end %>
+</div>
+
+
