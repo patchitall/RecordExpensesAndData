@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
+
 gem 'paperclip'
 gem 'simple_form'
 gem 'devise'
