@@ -16,6 +16,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
+//= require pickers
 
 $(document).ready(function(){
 	$(function () {

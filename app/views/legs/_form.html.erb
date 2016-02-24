@@ -6,10 +6,10 @@
     <%= f.input :trip_id %><br> 
   </div>
   <div class="row" >
-   
+   <%= f.input :start_time,:as => :datetime_picker %><br>
   </div>
   <div class="row">
-    <%= f.input :end_time %><br>
+    <%= f.input :end_time, :as => :datetime_picker %><br>
   </div>
   <div class="row">
     <%= f.input :start_mileage %><br>
@@ -24,20 +24,6 @@
     <%= f.input :non_work_miles %><br>
   </div>
 
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"><%= f.input :start_time %></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
    <div class="row">
     <%= f.button :submit %>
   </div>
