@@ -5,8 +5,11 @@
   <div class="row">
     <%= f.input :trip_id %><br> 
   </div>
+  <div class="row">
+    <%= f.input :destination %>
+  </div>
   <div class="row" >
-   <%= f.input :start_time,:as => :datetime_picker %><br>
+   <%= f.input :start_time, :as => :datetime_picker %><br>
   </div>
   <div class="row">
     <%= f.input :end_time, :as => :datetime_picker %><br>

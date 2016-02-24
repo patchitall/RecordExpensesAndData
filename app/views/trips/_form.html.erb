@@ -1,10 +1,13 @@
 <div class="container">
 <%= simple_form_for @trip do |f| %>
 <%= f.error_notification %>
-  
+ 
+  <div class="row">
+    <%= f.input :destination %>
+  </div>
 
   <div class="row">
-    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :start_date, :as => :date_picker %>
   </div>
   <div class="row">
     <%= f.input :end_date, as: :date, html5: true %><br>

@@ -71,6 +71,6 @@ class LegsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def leg_params
-      params.require(:leg).permit(:trip_id, :start_time, :end_time, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles)
+      params.require(:leg).permit(:trip_id, :start_time, :end_time, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles, :destination)
     end
 end
