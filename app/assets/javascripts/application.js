@@ -20,7 +20,12 @@
 
 $(document).ready(function(){
 	$(function () {
-	    $('#datetimepicker1').datetimepicker();
+	    $('#datetimepicker1').datetimepicker({"format": "mm-dd-yyyy"});
 	});
+});
+
+
+$('.dateshow').each(function(){
+	this.textContent = moment(this.textContent).format("dddd, MMMM Do YYYY, h:mm a");
 });
 
