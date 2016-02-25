@@ -3,14 +3,14 @@
 <%= f.error_notification %>
  
   <div class="row">
-    <%= f.input :destination, autofocus: true %>
+    <%= f.input :destination, :autofocus => true  %>
   </div>
 
   <div class="row">
-    <%= f.input :start_date, :as => :date_picker %>
+    <%= f.input :start_date, as: :date, html5: true%>
   </div>
   <div class="row">
-    <%= f.input :end_date, :as => :date_picker %><br>
+    <%= f.input :end_date, as: :date, html5: true %><br>
  </div>
   <div class="row actions btn">
     <%= f.button :submit %>
