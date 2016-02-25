@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+.cant-see-me {
+		display: none;
+}		
+
+h1 {
+	font-family: 'Damion', cursive;
+	font-size: 56px;
+}
+
+body {
+		background-color: #ffffff;
+		padding-top: 20px;
+    	padding-bottom: 20px;
+    	font-family: 'Pontano Sans', sans-serif;
+    	font-size: 20px;
+}
+
+.btn-default {
+
+}
+
+
+.container{
+		background-color: rgba(255, 255, 255, 0.6);
+		margin-top: 25px;
+		margin-bottom: 25px;
+		padding: 20px;
+		border-radius: 10px;
+}
