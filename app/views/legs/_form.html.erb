@@ -6,22 +6,28 @@
     <%= f.input :trip_id, value: :trip_id %><br> 
     <!-- f.hidden_field -->
   </div>
+
   <div class="row">
     <%= f.input :destination, autofocus: true %>
   </div>
 
-  <div class="row" >
+
    <%= f.input :start_time, as: :datetime_picker %><br>
-  </div>
+ 
+
+   
+    <%= f.input :end_time, as: :datetime_picker %><br>
+ 
+ 
+
   <div class="row">
-    <%= f.input :end_time, value: @leg.end_time, as: :datetime_picker %><br>
-  </div>
-  <div class="row">
+    <div class="col-md-6">
     <%= f.input :start_mileage %><br>
   </div>
-  <div class="row">
+  <div class="col-md-6">
     <%= f.input :end_mileage %><br>
   </div>
+</div>
   <div class="row">
     <%= f.input :non_travel_time_in_minutes %><br>
   </div>
@@ -35,6 +41,7 @@
 <% end %>
 </div>
 
+  
 
         
 

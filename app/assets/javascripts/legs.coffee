@@ -5,8 +5,12 @@
 
 # $(document).ready ->
 #   $('.form_datetime').datetimepicker({
+#     format: 'dd-mm-yyyy HH:00 P',
 #     autoclose: true,
 #     todayBtn: true,
+#     startDate: '01-01-2016 06:00',
+
 #     pickerPosition: "bottom-left",
-#     format: 'mm-dd-yyyy hh:ii'
+
 #   });
+

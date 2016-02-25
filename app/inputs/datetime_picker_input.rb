@@ -11,3 +11,4 @@ class DatetimePickerInput < DatePickerInput
         I18n.t('timepicker.pformat', default: 'HH:mm')
   end
 end
+ 

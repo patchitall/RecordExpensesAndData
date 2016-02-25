@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'american_date'
+
 gem 'font-awesome-rails'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'

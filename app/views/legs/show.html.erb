@@ -11,13 +11,14 @@
 </p>
 <p>
   <strong>Start time:</strong>
-  <div class="dateshow"><%= @leg.start_time.strftime("%b %d %I:%m").to_s %></div>
+ <%= @leg.start_time %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <div class="dateshow"><%= @leg.end_time.strftime("%b %d %I:%m").to_s %></div>
+ <%= @leg.end_time %>
 </p>
+<!-- .strftime("%b %d %I:%m").to_s -->
 
 <p>
   <strong>Start mileage:</strong>
