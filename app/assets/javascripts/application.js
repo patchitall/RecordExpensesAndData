@@ -12,20 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require moment
 //= require bootstrap-datetimepicker
 //= require_tree .
 //= require pickers
 
-$(document).ready(function(){
-	$(function () {
-	    $('#datetimepicker1').datetimepicker({"format": "mm-dd-yyyy"});
-	});
-});
 
 
-$('.dateshow').each(function(){
-	this.textContent = moment(this.textContent).format("dddd, MMMM Do YYYY, h:mm a");
-});
 
+// $(document).ready(function(){
+// 	$(function () {
+// 	$('#datetimepicker').datetimepicker();
+// });
+// 	)};
+// $(document).ready(function(){
+// 	$(function () {
+// 	    $('#datetimepicker1').datetimepicker({"format": "mm-dd-yyyy"});
+// 	});
+// });
+
+
+// $('.dateshow').each(function(){
+// 	this.textContent = moment(this.textContent).format("dddd, MMMM Do YYYY, h:mm a");
+// });
+
+// $('.dateonlyshow').each(function(){
+// 	this.textContent = moment(this.textContent).format("dddd, MMMM Do YYYY");
+// });

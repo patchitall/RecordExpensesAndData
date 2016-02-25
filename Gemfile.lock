@@ -45,6 +45,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    american_date (1.1.1)
     arel (6.0.3)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -165,8 +166,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -184,6 +183,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date
   bootstrap3-datetimepicker-rails
   byebug
   coffee-rails (~> 4.1.0)
@@ -200,7 +200,6 @@ DEPENDENCIES
   simple_form
   spring
   sqlite3
-  turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 

@@ -3,16 +3,18 @@
   <%= f.error_notification %>
 
   <div class="row">
-    <%= f.input :trip_id %><br> 
+    <%= f.input :trip_id, value: :trip_id %><br> 
+    <!-- f.hidden_field -->
   </div>
   <div class="row">
-    <%= f.input :destination %>
+    <%= f.input :destination, :autofocus => true %>
   </div>
+
   <div class="row" >
-   <%= f.input :start_time, :as => :datetime_picker %><br>
+   <%= f.input :start_time, as: :datetime_picker %><br>
   </div>
   <div class="row">
-    <%= f.input :end_time, :as => :datetime_picker %><br>
+    <%= f.input :end_time, value: @leg.end_time, as: :datetime_picker %><br>
   </div>
   <div class="row">
     <%= f.input :start_mileage %><br>
@@ -32,5 +34,9 @@
   </div>
 <% end %>
 </div>
+
+
+        
+
 
 

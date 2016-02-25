@@ -1908,7 +1908,7 @@
         stepping: 1,
         minDate: false,
         maxDate: false,
-        useCurrent: true,
+        useCurrent: false,
         collapse: true,
         locale: moment.locale(),
         defaultDate: false,
@@ -1926,7 +1926,7 @@
             close: 'glyphicon glyphicon-remove'
         },
         useStrict: false,
-        sideBySide: false,
+        sideBySide: true,
         daysOfWeekDisabled: [],
         calendarWeeks: false,
         viewMode: 'days',
@@ -1941,7 +1941,7 @@
         widgetParent: null,
         ignoreReadonly: false,
         keepOpen: false,
-        inline: false,
+        inline: true,
         keepInvalid: false,
         datepickerInput: '.datepickerinput',
         keyBinds: {
