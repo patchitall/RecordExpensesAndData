@@ -6,13 +6,17 @@
 </p>
 
 <p>
+  <strong>Destination:</strong>
+  <%= @leg.destination %>
+</p>
+<p>
   <strong>Start time:</strong>
-  <%= @leg.start_time %>
+  <div class="dateshow"><%= @leg.start_time.strftime("%b %d %I:%m").to_s %></div>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @leg.end_time %>
+  <div class="dateshow"><%= @leg.end_time.strftime("%b %d %I:%m").to_s %></div>
 </p>
 
 <p>
