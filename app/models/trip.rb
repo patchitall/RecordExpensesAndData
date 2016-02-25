@@ -21,6 +21,6 @@ class Trip < ActiveRecord::Base
 		@expense_total
 	end
 
-	
+
 
 end

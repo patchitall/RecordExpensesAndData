@@ -23,4 +23,9 @@ class Leg < ActiveRecord::Base
 	def travel_time_minutes
 		(((leg_travel_time)%3600)/60).to_i 
 	end
+
+	def leg_show
+		self.destination + " " + self.start_time.strftime("%b %d").to_s
+	end
+
 end

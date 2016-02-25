@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Trip</th>
+      <th>Destination</th>
       <th>Start time</th>
       <th>End time</th>
       <th>Start mileage</th>
@@ -20,8 +21,9 @@
     <% @legs.each do |leg| %>
       <tr>
         <td><%= leg.trip_id %></td>
-        <td><%= leg.start_time %></td>
-        <td><%= leg.end_time %></td>
+        <td><%= leg.destination %></td>
+        <td class="dateshow"><%= leg.start_time.strftime("%b %d %I:%m").to_s %></td>
+        <td class="dateshow"><%= leg.end_time.strftime("%b %d %I:%m").to_s %></td>
         <td><%= leg.start_mileage %></td>
         <td><%= leg.end_mileage %></td>
         <td><%= leg.non_travel_time_in_minutes %></td>
