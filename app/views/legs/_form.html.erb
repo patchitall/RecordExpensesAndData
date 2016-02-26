@@ -1,9 +1,11 @@
 <div class="container">
   <%= simple_form_for @leg do |f| %>
+  <%= simple_form_for [@trip, @leg] do |f| %>
   <%= f.error_notification %>
  
   <div class="row">
-    <%= f.input :trip_id, value: :trip_id %><br> 
+    
+    <%= f.hidden_field :trip_id, :value => params[:trip_id] %><br> 
     <!-- f.hidden_field -->
   </div>
 
@@ -11,13 +13,24 @@
     <%= f.input :destination, autofocus: true %>
   </div>
 
+<div class="row">
+  <div class="col-md-6">
+  <%= f.input :date, as: :date, html5: true %>
+</div>
+<div class="col-md-2">
+  <%= f.input :next_day %>
+</div>
+</div>
 
-   <%= f.input :start_time, as: :datetime_picker %><br>
- 
+<div class="row">
+  <div class="col-md-6">
+   <%= f.input :start_time, as: :time, html5: :true %><br>  
 
-   
-    <%= f.input :end_time, as: :datetime_picker %><br>
- 
+   </div>
+<div class="col-md-6">
+   <%= f.input :end_time, as: :time, html5: :true %><br>
+ </div>
+</div>
  
 
   <div class="row">
@@ -38,6 +51,7 @@
    <div class="row">
     <%= f.button :submit %>
   </div>
+<% end %>
 <% end %>
 </div>
 

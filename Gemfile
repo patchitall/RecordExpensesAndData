@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 
-gem 'font-awesome-rails'
-gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
-gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+# gem 'font-awesome-rails'
+# gem 'momentjs-rails'
+# gem 'bootstrap3-datetimepicker-rails'
+# gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'paperclip'
 gem 'simple_form'
 gem 'devise'

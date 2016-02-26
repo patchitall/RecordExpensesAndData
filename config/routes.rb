@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   resources :expenses
   resources :legs
-  resources :trips
+  resources :trips do |t|
+    resources :legs
+  end
 
   # map.resources :trips do |trips|
   #   trips.resources :legs
   # end
 
-  # get 'new_trip_leg_url(@trip.id)' => trips/:trip_id/legs/new
+  # get 'new_trip_leg_url(@trip.id)' => 'trips/:trip_id/legs/new'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

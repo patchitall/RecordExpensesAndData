@@ -18,6 +18,9 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     @trip = Trip.new
+    # if (params[:trip_id])
+    #   @leg.trip_id = params[:trip_id]
+    # end
   end
 
   # GET /trips/1/edit

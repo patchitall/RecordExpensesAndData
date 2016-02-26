@@ -10,15 +10,23 @@
   <%= @leg.destination %>
 </p>
 <p>
+  <strong>Date:</strong>
+  <%= @leg.date.strftime("%B %d %Y") %>
+</p>
+<p>
   <strong>Start time:</strong>
- <%= @leg.start_time %>
+ <%= @leg.start_time.strftime("%l:%M %P").to_s %>
 </p>
 
 <p>
   <strong>End time:</strong>
- <%= @leg.end_time %>
+  <% if @leg.next_day? %>
+  <%= @leg.date.next.strftime("%b %d")  %>
+  <% end %>
+ <%= @leg.end_time.strftime("%l:%M %P").to_s %>
+ 
 </p>
-<!-- .strftime("%b %d %I:%m").to_s -->
+<!--  -->
 
 <p>
   <strong>Start mileage:</strong>

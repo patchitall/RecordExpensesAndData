@@ -1,5 +1,6 @@
 class LegsController < ApplicationController
   before_action :set_leg, only: [:show, :edit, :update, :destroy]
+  before_action :set_time, only: [:new]
 
   # GET /legs
   # GET /legs.json
@@ -15,9 +16,15 @@ class LegsController < ApplicationController
   # GET /legs/new
   def new
     @leg = Leg.new
+    @leg.trip_id = params[:trip_id] if params.has_key?(:trip_id) 
     @leg.non_work_miles = 0
     @leg.non_travel_time_in_minutes = 0
   end
+
+  def set_time
+    @start_time = Time.now 
+    @end_time = Time.now
+  end 
 
   # GET /legs/1/edit
   def edit
@@ -71,6 +78,6 @@ class LegsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def leg_params
-      params.require(:leg).permit(:trip_id, :start_time, :end_time, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles, :destination)
+      params.require(:leg).permit(:trip_id, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles, :destination, :start_time, :end_time, :date, :next_day)
     end
 end

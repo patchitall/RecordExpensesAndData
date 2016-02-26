@@ -13,7 +13,13 @@ class Leg < ActiveRecord::Base
 		if non_travel_time_in_minutes.nil?
 			@leg.non_travel_time_in_minutes = 0
 		end
-		end_time - start_time - (non_travel_time_in_minutes * 60)
+		unless next_day 
+			end_time - start_time - (non_travel_time_in_minutes * 60)
+		else
+			day_end = Time.new.end_of_day
+			day_start = Time.new.beginning_of_day
+			(day_end - start_time) + (end_time - day_start) - (non_travel_time_in_minutes * 60)
+		end
 	end
 
 	def travel_time_hours
