@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225220456) do
+ActiveRecord::Schema.define(version: 20160227181526) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer  "trip_id"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 20160225220456) do
     t.boolean  "next_day"
     t.time     "start_time"
     t.time     "end_time"
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.date     "report_start"
+    t.date     "report_end"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "trips", force: :cascade do |t|

@@ -7,6 +7,7 @@
     <tr>
       <th>Trip</th>
       <th>Destination</th>
+      <th>Date</th>
       <th>Start time</th>
       <th>End time</th>
       <th>Start mileage</th>
@@ -22,6 +23,7 @@
       <tr>
         <td><%= leg.trip_id %></td>
         <td><%= leg.destination %></td>
+        <td><%= leg.date %></td>
         <td class="dateshow"><%= leg.start_time.strftime("%b %d %I:%m").to_s %></td>
         <td class="dateshow"><%= leg.end_time.strftime("%b %d %I:%m").to_s %></td>
         <td><%= leg.start_mileage %></td>
