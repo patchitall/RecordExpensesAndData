@@ -25,7 +25,19 @@
 <% report_mileage %>
 <%= @report_total_mileage %>
 <p>
+
+<% expense_report %>
+<% report_expenses %>
 <strong>Expenses:<strong>
+	<% @expense_report.each do |e| %>
+		<%= e.expense_name %>
+		$<%= e.expense_amount %>
+		<%= e.expense_date %><br>
+	<%end%>
 </p>
+
+<strong>Total Expenses:</strong>
+<%= @total_expenses %><br>
+
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160227181526) do
+ActiveRecord::Schema.define(version: 20160227192353) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer  "trip_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160227181526) do
     t.string   "expense_receipt_content_type"
     t.integer  "expense_receipt_file_size"
     t.datetime "expense_receipt_updated_at"
+    t.date     "expense_date"
   end
 
   create_table "legs", force: :cascade do |t|
