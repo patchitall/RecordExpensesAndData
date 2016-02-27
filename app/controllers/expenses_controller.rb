@@ -15,6 +15,7 @@ class ExpensesController < ApplicationController
   # GET /expenses/new
   def new
     @expense = Expense.new
+    @expense.trip_id = params[:trip_id] if params.has_key?(:trip_id) 
   end
 
   # GET /expenses/1/edit

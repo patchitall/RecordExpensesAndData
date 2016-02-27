@@ -1,5 +1,5 @@
 class Leg < ActiveRecord::Base
-	belongs_to :trip
+	belongs_to :trip 
 
 	def mileage_total
 		if non_work_miles.nil? 

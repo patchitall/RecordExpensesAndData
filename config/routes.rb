@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :legs
   resources :trips do |t|
     resources :legs
+    resources :expenses
   end
 
   # map.resources :trips do |trips|

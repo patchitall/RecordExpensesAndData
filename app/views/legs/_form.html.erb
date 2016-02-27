@@ -5,7 +5,7 @@
  
   <div class="row">
     
-    <%= f.hidden_field :trip_id, :value => params[:trip_id] %><br> 
+    <%= f.association :trip, label_method: :destination, value_method: :id, :value => params[:trip_id] %><br> 
     <!-- f.hidden_field -->
   </div>
 
