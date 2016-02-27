@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
-
+  after_action :set_label, only: [:create, :update]
   before_filter :authenticate_user!
  
   # GET /trips
@@ -18,13 +18,17 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     @trip = Trip.new
-    # if (params[:trip_id])
-    #   @leg.trip_id = params[:trip_id]
-    # end
+  
   end
 
   # GET /trips/1/edit
   def edit
+  end
+
+  def set_label
+    label = @trip.destination + " " + @trip.start_date.to_s
+    @trip.update(trip_label: label)
+    
   end
 
   # POST /trips
@@ -75,6 +79,6 @@ class TripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:start_date, :end_date, :destination)
+      params.require(:trip).permit(:start_date, :end_date, :destination, :trip_label)
     end
 end

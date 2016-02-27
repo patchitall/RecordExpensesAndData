@@ -21,8 +21,8 @@ class Trip < ActiveRecord::Base
 		@expense_total
 	end
 
-	def trip_label
-		@trip.destination + " " + @trip.start_date
+	def label
+		
 	end
 
 end

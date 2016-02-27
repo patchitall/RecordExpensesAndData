@@ -4,7 +4,7 @@
   
 
   <div class="row">
-    <%= f.input :trip_id %>
+    <%= f.association :trip, label_method: :trip_label, value_method: :id, :value => params[:trip_id] %>
   </div>
   <div class="row">
     <%= f.input :expense_name %><br>
