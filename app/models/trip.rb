@@ -2,6 +2,8 @@ class Trip < ActiveRecord::Base
 	belongs_to :user
 	has_many :expenses
 	has_many :legs
+	validates_with TripValidator
+	validates :destination, presence: true
 
 
 	def trip_miles

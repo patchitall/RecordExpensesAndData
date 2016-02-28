@@ -1,6 +1,13 @@
 class Leg < ActiveRecord::Base
 	belongs_to :trip 
 
+	validates :trip_id, presence: true
+	validates_with MileageValidator
+	validates :destination, presence: true
+	validates_with TimeValidator
+	validates_with DateValidator
+ 
+
 	def mileage_total
 		if non_work_miles.nil? 
 			@leg.non_work_miles = 0
