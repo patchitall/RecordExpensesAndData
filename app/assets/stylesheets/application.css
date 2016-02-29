@@ -31,7 +31,14 @@ body {
     	font-size: 20px;
 }
 
+.jumbotron {
+		background-color: #dae0ea;
+}
+
 .btn-default {
+		background-color: #f6dbdb;
+		font-family: 'Potano Sans', sans-serif;
+		font-size: 15px;
 
 }
 
