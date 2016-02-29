@@ -20,6 +20,9 @@ class Leg < ActiveRecord::Base
 		if non_travel_time_in_minutes.nil?
 			@leg.non_travel_time_in_minutes = 0
 		end
+		if time_zone.nil?
+			self.time_zone = 0
+		end
 		unless next_day 
 			end_time - start_time - (non_travel_time_in_minutes * 60) - (time_zone * 3600)
 		else
