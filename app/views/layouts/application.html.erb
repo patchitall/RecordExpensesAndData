@@ -15,20 +15,40 @@
 
   <body>
 
+    <% if user_signed_in? %>
+
     <div class="container">
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li><%= link_to 'My Trips', trips_path %></li>
             <li role="presentation"><a href="#">About READ</a></li>
-            <li role="presentation"><a href="#">XXXX</a></li>
+            <li><%= link_to 'New Trip', new_trip_path %></li>
+            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), method: 'delete', class: "btn btn-default" %></li>
           </ul>
         </nav>
         <h3 class="text-muted">READ: Record Expenses And Data</h3>
       </div>
 
+  <% else %>
+
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><%= link_to 'My Trips', trips_path %></li>
+            <li role="presentation"><a href="#">About READ</a></li>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">READ: Record Expenses And Data</h3>
+      </div>
+  <% end %>
+
       <div class="jumbotron">
-		<%= yield %>
+    <%= yield %>
       </div>
 
       <div class="row marketing">
@@ -37,15 +57,7 @@
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
         </div>
       </div>
-
-    </div> <!-- /container -->
-
-
- 
-
-
-
- 
+  </div>
 
 
   <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' %>
@@ -56,4 +68,5 @@
 <footer class="container">
         <p>&copy; READ 2016</p>
       </footer>
+
 </html>
