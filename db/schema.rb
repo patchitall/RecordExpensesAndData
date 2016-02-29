@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229145143) do
+ActiveRecord::Schema.define(version: 20160229153142) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer  "trip_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160229145143) do
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "user_id"
+    t.integer  "time_zone"
   end
 
   create_table "reports", force: :cascade do |t|
