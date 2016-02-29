@@ -21,11 +21,11 @@ class Leg < ActiveRecord::Base
 			@leg.non_travel_time_in_minutes = 0
 		end
 		unless next_day 
-			end_time - start_time - (non_travel_time_in_minutes * 60)
+			end_time - start_time - (non_travel_time_in_minutes * 60) - (time_zone * 3600)
 		else
 			day_end = Time.new.end_of_day
 			day_start = Time.new.beginning_of_day
-			(day_end - start_time) + (end_time - day_start) - (non_travel_time_in_minutes * 60)
+			(day_end - start_time) + (end_time - day_start) - (non_travel_time_in_minutes * 60) - (time_zone * 3600)
 		end
 	end
 
