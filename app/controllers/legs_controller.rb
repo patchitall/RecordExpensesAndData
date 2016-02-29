@@ -1,11 +1,12 @@
 class LegsController < ApplicationController
   before_action :set_leg, only: [:show, :edit, :update, :destroy]
   before_action :set_time, only: [:new]
+   after_action :set_user, only: [:create]
 
   # GET /legs
   # GET /legs.json
   def index
-    @legs = Leg.all
+    @legs = current_user.legs.all
   end
 
   # GET /legs/1
@@ -25,6 +26,10 @@ class LegsController < ApplicationController
     @start_time = Time.now 
     @end_time = Time.now
   end 
+
+  def set_user
+    @leg.update(user_id: current_user.id)
+  end
 
   # GET /legs/1/edit
   def edit
@@ -78,6 +83,6 @@ class LegsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def leg_params
-      params.require(:leg).permit(:trip_id, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles, :destination, :start_time, :end_time, :date, :next_day)
+      params.require(:leg).permit(:trip_id, :start_mileage, :end_mileage, :non_travel_time_in_minutes, :non_work_miles, :destination, :start_time, :end_time, :date, :next_day, :user_id)
     end
 end

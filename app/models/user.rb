@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many :trips
+   has_many :legs
+   has_many :expenses
    
 end

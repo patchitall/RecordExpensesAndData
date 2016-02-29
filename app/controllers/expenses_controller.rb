@@ -1,15 +1,21 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+   after_action :set_user, only: [:create]
   
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+   
+    @expenses = current_user.expenses.all
   end
 
   # GET /expenses/1
   # GET /expenses/1.json
   def show
+  end
+
+    def set_user
+    @expense.update(user_id: current_user.id)
   end
 
   # GET /expenses/new
@@ -70,6 +76,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:trip_id, :expense_name, :expense_amount, :expense_receipt, :expense_date)
+      params.require(:expense).permit(:trip_id, :expense_name, :expense_amount, :expense_receipt, :expense_date, :user_id)
     end
 end
