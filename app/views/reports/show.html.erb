@@ -34,7 +34,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						Destination: <%= l.destination %>
+						Destination: <%= link_to l.destination, l %>
 					</div>
 					<div class="col-md-4">
 						Mileage: <%= l.mileage_total %> miles 
@@ -73,7 +73,7 @@
 	<div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			Description: <%= e.expense_name %>
+			Description: <%= link_to e.expense_name, e %>
 		</div>
 		<div class="col-md-4">
 			Amount: $<%= e.expense_amount %>

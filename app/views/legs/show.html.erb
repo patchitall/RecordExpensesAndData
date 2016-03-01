@@ -1,63 +1,67 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Trip:</strong>
-  <%= @leg.trip_id %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Trip:</strong>
+      <%= link_to @leg.trip.trip_label, @leg.trip %>
+    </div>
+    <div class="col-md-6">
+      <strong>Destination:</strong>
+      <%= @leg.destination %>
+    </div>
+  </div>
 
-<p>
-  <strong>Destination:</strong>
-  <%= @leg.destination %>
-</p>
-<p>
-  <strong>Date:</strong>
-  <%= @leg.date.strftime("%B %d %Y") %>
-</p>
-<p>
-  <strong>Start time:</strong>
- <%= @leg.start_time.strftime("%l:%M %P").to_s %>
-</p>
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Start:</strong>
+      <%= @leg.date.strftime("%B %d %Y") %>
+      <%= @leg.start_time.strftime("%l:%M %P").to_s %>
+    </div>
+    <div class="col-md-6">
+      <strong>End:</strong>
+      <% if @leg.next_day? %>
+      <%= @leg.date.next.strftime("%b %d")  %>
+      <% end %>
+      <%= @leg.end_time.strftime("%l:%M %P").to_s %>
+    </div>
+  </div>
 
-<p>
-  <strong>End time:</strong>
-  <% if @leg.next_day? %>
-  <%= @leg.date.next.strftime("%b %d")  %>
-  <% end %>
- <%= @leg.end_time.strftime("%l:%M %P").to_s %>
- 
-</p>
-<strong>Date:</strong>
-<%= @leg.date %>
-<p>
-  <strong>Start mileage:</strong>
-  <%= @leg.start_mileage %>
-</p>
+<div class="row">
 
-<p>
-  <strong>End mileage:</strong>
-  <%= @leg.end_mileage %>
-</p>
+  <div class="col-md-6">
+    <strong>Start mileage:</strong>
+    <%= @leg.start_mileage %> miles
+  </div>
+  <div class="col-md-6">
+    <strong>End mileage:</strong>
+    <%= @leg.end_mileage %> miles
+  </div>
+ </div> 
+<div class="row">
+  <div class="col-md-6">
+    <strong>Total Miles:</strong>
+    <%= @leg.mileage_total %> miles
+  </div>
 
-<p>
-  <strong>Non travel time in minutes:</strong>
-  <%= @leg.non_travel_time_in_minutes %>
-</p>
+  <div class="col-md-6">
+    <strong>Non work miles:</strong>
+    <%= @leg.non_work_miles %> miles 
+  </div>
+</div>
 
-<p>
-  <strong>Non work miles:</strong>
-  <%= @leg.non_work_miles %>
-</p>
-
-<p>
-  <strong>Total Miles:</strong>
-  <%= @leg.mileage_total %>
-</p>
-
-<p>
-  <strong>Total Travel Time:</strong>
-  
-  <%= pluralize(@leg.travel_time_hours, "hour") %> 
-  <%= pluralize(@leg.travel_time_minutes, "minute") %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <strong>Total Travel Time:</strong>
+    
+    <%= pluralize(@leg.travel_time_hours, "hour") %> 
+    <%= pluralize(@leg.travel_time_minutes, "minute") %>
+  </div>
+  <div class="col-md-6">
+    <strong>Non travel time in minutes:</strong>
+    <%= @leg.non_travel_time_in_minutes %>
+  </div>
+</div>
+</div>
 <%= link_to 'Edit', edit_leg_path(@leg) %> |
 <%= link_to 'Back', legs_path %> 
