@@ -24,5 +24,6 @@
   <%= image_tag @expense.expense_receipt(:thumb) %>
 </p>
 
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
+<%= link_to 'Edit', edit_expense_path(@expense) %> 
+<%= link_to 'Destroy', @expense, method: :delete, data: { confirm: 'Are you sure?' } %>
+

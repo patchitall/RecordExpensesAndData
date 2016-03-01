@@ -63,5 +63,6 @@
   </div>
 </div>
 </div>
-<%= link_to 'Edit', edit_leg_path(@leg) %> |
-<%= link_to 'Back', legs_path %> 
+<%= link_to 'Edit', edit_leg_path(@leg) %> 
+<%= link_to 'Destroy', @leg, method: :delete, data: { confirm: 'Are you sure?' } %>
+
