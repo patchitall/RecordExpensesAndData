@@ -1,43 +1,94 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Report start:</strong>
-  <%= @report.report_start %>
-</p>
-
-<p>
-  <strong>Report end:</strong>
-  <%= @report.report_end %>
-</p>
-
-
-<% leg_report %>
-<p>
+		
+  			<strong>Report for: </strong>
+  			<%= @report.report_start.strftime("%B %d %Y") %>
+  	
+  	
+			<strong> to </strong>
+			<%= @report.report_end.strftime("%B %d %Y") %>
+		
+<div class="container">
 	
-<strong>Legs:</strong>
-<% @leg_report.each do |l| %>
-	<%= l.destination %>
-	<%= l.mileage_total %><br>
-<% end %>
-</p>
+		<% leg_report %>
+	
 
-<strong>Total mileage:</strong>
-<% report_mileage %>
-<%= @report_total_mileage %>
-<p>
+	<% if @leg_report.empty? %>
+		<p>No legs matched your search.</p>
+	<% else %>
+			<div class="col-md-4">
+				<strong>Legs:</strong>
+			</div>
+			<div class="col-md-4">
+				Total mileage:
+				<% report_mileage %>
+				<%= @report_total_mileage %>
+			</div>
+			<div class="col-md-4">
+				Total time:
+				<%= pluralize((@report_time/3600).to_i, "hour") %> <%= pluralize(((@report_time%3600)/60).to_i, "minute") %>
+			</div><br>
+
+	
+			<% @leg_report.each do |l| %>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						Destination: <%= l.destination %>
+					</div>
+					<div class="col-md-4">
+						Mileage: <%= l.mileage_total %> miles 
+					</div>
+					<div class="col-md-4">
+						Time: <%= pluralize(l.travel_time_hours, "hour") %> 
+		  				<%= pluralize(l.travel_time_minutes, "minute") %><br>
+					</div>
+				</div>
+			</div>
+			<% end %>
+	<% end %>
+
+</div>
+
 
 <% expense_report %>
 <% report_expenses %>
-<strong>Expenses:<strong>
+
+<div class="container">
+	<div class-"row">
+<% if @expense_report.empty? %>
+	There were no expenses in that date range. 
+<% else %>
+		<div class="col-md-4">
+			<strong>Expenses:<strong>
+		</div>
+		<div class="col-md-6">
+			<strong>Total Expenses:</strong>
+			$<%= @total_expenses %><br>
+		</div>
+
+	</div>
+<br>
 	<% @expense_report.each do |e| %>
-		<%= e.expense_name %>
-		$<%= e.expense_amount %>
-		<%= e.expense_date %><br>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			Description: <%= e.expense_name %>
+		</div>
+		<div class="col-md-4">
+			Amount: $<%= e.expense_amount %>
+		</div>
+		<div class="col-md-4">
+			Date: <%= e.expense_date %>
+		</div>
+	</div>
+</div>
 	<%end%>
-</p>
 
-<strong>Total Expenses:</strong>
-<%= @total_expenses %><br>
 
+
+
+<% end %>
+</div>
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>

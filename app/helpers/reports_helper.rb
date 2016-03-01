@@ -13,8 +13,12 @@ module ReportsHelper
 	#run only AFTER leg_report
 	def report_mileage
 		@report_total_mileage =  0
+		@report_time = 0
 		@leg_report.each do |m|
 			@report_total_mileage += m.mileage_total
+		end
+		@leg_report.each do |t|
+			@report_time += t.leg_travel_time
 		end
 	end
 
