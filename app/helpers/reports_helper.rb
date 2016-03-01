@@ -3,7 +3,7 @@ module ReportsHelper
 		@legs = Leg.all 
 		@leg_report = []
 		@legs.each do |l|
-			if (l.date >= @report.report_start) && (l.date <= @report.report_end)
+			if (l.date >= @report.report_start) && (l.date <= @report.report_end) && (l.user_id == current_user.id)
 			@leg_report.push(l)
 			@leg_report
 			end
@@ -26,7 +26,7 @@ module ReportsHelper
 		@expenses = Expense.all 
 		@expense_report = []
 		@expenses.each do |e|
-			if (e.expense_date >= @report.report_start) && (e.expense_date <= @report.report_end)
+			if (e.expense_date >= @report.report_start) && (e.expense_date <= @report.report_end) && (e.user_id == current_user.id)
 				@expense_report.push(e)
 				@expense_report
 			end
