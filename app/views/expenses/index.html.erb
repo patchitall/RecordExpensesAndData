@@ -22,9 +22,9 @@
         <td><%= expense.expense_amount %></td>
         <td><%= expense.expense_date %></td>
         <td><%= image_tag expense.expense_receipt(:thumb) %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', expense, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_expense_path(expense), class: "btn btn-default" %></td>
+        <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md" %></td>
       </tr>
     <% end %>
   </tbody>

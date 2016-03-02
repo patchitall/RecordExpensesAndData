@@ -24,12 +24,13 @@
 
   <div class="field">
     <%= f.text_field :employeeidentifier, placeholder: "Your Employee ID" %>
-  </div>
+  </div><br>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
-  </div>
-
+  </div><br>
+ 
+  <%= link_to 'Already Registered? Log In', new_session_path(resource_name), class: "btn btn-md" %>
 
 <% end %>
 

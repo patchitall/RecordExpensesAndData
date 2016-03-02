@@ -40,9 +40,9 @@
 
 <br><br>
 
-<%= link_to 'Add an Expense', new_trip_expense_path(:trip_id => @trip.id) %> 
-<%= link_to 'Add a Leg', new_trip_leg_path(:trip_id => @trip.id) %>
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
-<%= link_to 'Destroy', @trip, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Add an Expense', new_trip_expense_path(:trip_id => @trip.id), class: "btn btn-default" %> 
+<%= link_to 'Add a Leg', new_trip_leg_path(:trip_id => @trip.id), class: "btn btn-default" %>
+<%= link_to 'Edit', edit_trip_path(@trip), class: "btn btn-default" %> 
+<%= link_to 'Delete', @trip, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md" %>
 
 

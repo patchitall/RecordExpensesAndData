@@ -16,9 +16,9 @@
       <tr>
         <td><%= report.report_start %></td>
         <td><%= report.report_end %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', report, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_report_path(report), class: "btn btn-default" %></td>
+        <td><%= link_to 'Delete', report, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-md" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to 'New Report', new_report_path, class: "btn btn md" %>

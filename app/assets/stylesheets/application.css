@@ -19,8 +19,23 @@
 }		
 
 h1 {
-	font-family: 'Damion', cursive;
-	font-size: 56px;
+		font-family: 'Damion', cursive;
+		font-size: 56px;
+}
+
+h2 {
+		font-family: 'Damion', cursive;
+		font-size: 35px;
+}
+
+h4 {
+		font-family: 'Damion', cursive;
+		font-size: 25px;
+}
+
+body {
+  		background-image: url('readroad.jpg');
+ 	 	background-size: cover;
 }
 
 body {
@@ -36,10 +51,22 @@ body {
 }
 
 .btn-default {
-		background-color: #f6dbdb;
+		background-color: #e7d7a5;
 		font-family: 'Potano Sans', sans-serif;
 		font-size: 15px;
+}
 
+.btn-lg {
+		background-color: #e7d7a5;
+		font-family: 'Potano Sans', sans-serif;
+		font-size: 20px;
+
+}
+
+.btn-md {
+		background-color: #f9f9f9;
+		font-family: 'Potano Sans', sans-serif;
+		font-size: 17px;
 }
 
 
@@ -51,6 +78,4 @@ body {
 		border-radius: 10px;
 }
 
-.report {
-	
-}
+

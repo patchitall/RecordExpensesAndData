@@ -70,7 +70,7 @@ class LegsController < ApplicationController
   def destroy
     @leg.destroy
     respond_to do |format|
-      format.html { redirect_to legs_url, notice: 'Leg was successfully destroyed.' }
+      format.html { redirect_to trips_url, notice: 'Leg was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
